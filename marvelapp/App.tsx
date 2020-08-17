@@ -1,11 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
+
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar, StyleSheet, Text, View } from 'react-native';
 
 // Importação de Componentes externos
 import { AppLoading } from "expo";
 import { useFonts } from "@use-expo/font";
 import api from "./src/services/api";
+
+//Importanto arquivo de rotas
+import Routes from "./src/routes";
 
 
 //Importando imagens
@@ -35,15 +38,20 @@ export default function App() {
 
 
   return (
+    <>
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor="transparent"
+        translucent
+      />
 
-
-    <Home />
-
+      <Routes />
+    </>
   );
 }
 
 const styles = StyleSheet.create({
- 
+
   // Carregamento da fonte no CSS
   text: {
     fontFamily: "gilroy-semibold",
